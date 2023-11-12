@@ -17,9 +17,9 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $json = file_get_contents('php://input');
     $data = json_decode($json);
-    $sql_query1 = "SELECT user_id,user_name FROM user where user_email='$data->email'";
+    $sql_query1 = "SELECT user_email,user_name FROM user where user_email='$data->email'";
 
-    $sql_query = "INSERT INTO user values (DEFAULT,'$data->name','$data->email','$data->password', $data->tel)";
+    $sql_query = "INSERT INTO user values ('$data->name','$data->email','$data->password', $data->tel)";
 
     $res = $conn->prepare($sql_query1);
     $res->execute();

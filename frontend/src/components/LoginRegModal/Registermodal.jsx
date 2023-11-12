@@ -54,7 +54,7 @@ const Registermodal = ({ setToggle }) => {
                     <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
                         Phone :
                     </span>
-                    <input type="password" ref={telRef} className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="Password" />
+                    <input type="tel" ref={telRef} className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="Phone" />
                 </label>
                 <div className='flex w-full justify-between items-center gap-50 mt-5'>
                     <button onClick={registrationUser} className='bg-slate-600 rounded text-white px-10 py-4' >submit</button>

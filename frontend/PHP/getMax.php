@@ -18,7 +18,7 @@ try {
     $json = file_get_contents('php://input');
     $data = json_decode($json);
 
-    $var1 = "SELECT MAX(amount) as max FROM user_event WHERE user_email='$data->userID';";
+    $var1 = "SELECT MAX(amount) as max, MIN(amount) as min FROM user_event WHERE user_email='$data->userID';";
 
     $res = $conn->prepare($var1);
 

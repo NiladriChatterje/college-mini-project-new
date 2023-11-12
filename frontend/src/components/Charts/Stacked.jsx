@@ -21,7 +21,7 @@ const Stacked = ({ stackedCustomSeries, width, height }) => {
   async function getMaximumAmt() {
     const { data } = await axios.post("http://localhost:8000/getMax.php", JSON.stringify({ userID: userDetails?.email }));
     console.log(data)
-    stackedPrimaryYAxis = { ...stackedPrimaryYAxis, maximum: (data.max + 100) }
+    stackedPrimaryYAxis = { ...stackedPrimaryYAxis, maximum: (data?.max + 100), minimum: (data?.min - 100) }
   }
   React.useEffect(() => {
     getMaximumAmt();
